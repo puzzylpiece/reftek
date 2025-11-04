@@ -1,4 +1,4 @@
-![reftek logo][https://raw.githubusercontent.com/puzzylpiece/reftek/refs/heads/main/readme-images/logo.svg]
+![alt text](https://raw.githubusercontent.com/puzzylpiece/reftek/refs/heads/main/readme-images/logo.svg "Reftek logo")
 
 # Reftek
 
