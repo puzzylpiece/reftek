@@ -5,7 +5,7 @@
 const headers = [
     "Angles",
     "Outfits",
-    "Data"
+    "Dayta"
 ]
 
 // ADD ANGLES HERE. 
