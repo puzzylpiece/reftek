@@ -10,6 +10,7 @@ const angleForm = document.getElementById("angleToggles")
 const outfitPic = document.getElementById("outfitguy")
 const angleTxt = document.getElementById("anglesText")
 const outfitTxt = document.getElementById("outfitsText")
+const hideMyAss = document.getElementById("hidetext")
 const titles = [
     document.getElementById("anglesTitle"),
     document.getElementById("outfitsTitle"),
@@ -133,8 +134,12 @@ function spawnInThings() {
             angleForm.appendChild(newToggleLabel);
             angleForm.appendChild(document.createElement("br"))
         }
+        if (headers[3] == "") {
+            hideMyAss.style.display = "none";
+        } else {
+            hideMyAss.innerText = headers[3];
+        }
     } else {
-        const hideMyAss = document.getElementById("hidetext")
         hideMyAss.style.display = "none";
     }
     for (let i = 0; i < (colors.length); i++) {

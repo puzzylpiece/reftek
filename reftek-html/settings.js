@@ -1,11 +1,12 @@
 // HELLO! This is the file you are supposed to edit to play with the refsheet.
 
-// ADD HEADERS HERE.
-// If you don't want the headers to appear, just leave each one as "".
+// TITLES
+// If you don't want the headers to appear, just leave each one as "". The fourth header controls the toggle switch's title
 const headers = [
     "Angles",
     "Outfits",
-    "Data"
+    "Data",
+    "Hide"
 ]
 
 // ADD ANGLES HERE. 
@@ -16,7 +17,7 @@ const angles = [
 ]
 
 // ANGLE TOGGLES
-// Enable and Disable
+// If there is only one element here it won't appear. To add the corresponding variants, upload images with "_[name of the toggle]" appended to their filename.
 const angleToggles = [
     ""
 ]
