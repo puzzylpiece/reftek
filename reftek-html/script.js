@@ -226,18 +226,16 @@ function spawnInThings(init) {
 		colorHeader.style.display = "";
 		colorTable.style.display = "";
 		for (let i = 0; i < (characters[charIndex].colors.length); i++) {
+			const newColorRow = document.createElement("tr");
 			if (characters[charIndex].colors[i][1] == "h") {
-				const newRow = document.createElement("tr");
 				const newHeading = document.createElement("td");
 				newHeading.colSpan = 4;
 				newHeading.classList.add("tableSeparator")
 				const newHeadingContent = document.createTextNode(characters[charIndex].colors[i][0]);
 				newHeading.appendChild(newHeadingContent);
-				newRow.appendChild(newHeading);
+				newColorRow.appendChild(newHeading);
 				newColorRow.id = "colorRow";
-				colorTable.appendChild(newRow)
 			} else {
-				const newColorRow = document.createElement("tr");
 				const newColorPreview = document.createElement("td");
 				newColorPreview.style.backgroundColor = `#${characters[charIndex].colors[i][0]}`;
 				const newColorDesc = document.createElement("td");
@@ -258,16 +256,16 @@ function spawnInThings(init) {
 				newColorRow.appendChild(newColorDesc);
 				newColorRow.appendChild(newColorHex);
 				newColorRow.appendChild(newColorCopy);
-				newColorRow.id = "colorRow";
-				if (typeof characters[charIndex].colors[i][2] === "number") {
-					newColorRow.classList.add(`outfit-${characters[charIndex].colors[i][2]}`);
-				} else if (typeof characters[charIndex].colors[i][2] !== "undefined") {
-					newColorRow.classList.add(`outfit-${characters[charIndex].outfits.findIndex((a)=>a[0]==characters[charIndex].colors[i][2])}`);
-				} else {
-					newColorRow.classList.add(`outfit-all`);
-				}
-				colorTable.appendChild(newColorRow);
 			}
+			newColorRow.id = "colorRow";
+			if (typeof characters[charIndex].colors[i][2] === "number") {
+				newColorRow.classList.add(`outfit-${characters[charIndex].colors[i][2]}`);
+			} else if (typeof characters[charIndex].colors[i][2] !== "undefined") {
+				newColorRow.classList.add(`outfit-${characters[charIndex].outfits.findIndex((a)=>a[0]==characters[charIndex].colors[i][2])}`);
+			} else {
+				newColorRow.classList.add(`outfit-all`);
+			}
+			colorTable.appendChild(newColorRow);
 		}
 		updateColorTable()
 	} else {
