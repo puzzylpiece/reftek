@@ -24,6 +24,23 @@ const titles = [
 let showOutfits = false
 
 function setupCharacters() {
+	// legacy settings support
+	if (typeof characters === "undefined") {
+		characters = [{title: title, angles: angles}];
+		if (typeof angleToggles !== "undefined") {
+			characters[0].angleToggles = angleToggles
+		}
+		if (typeof outfits !== "undefined") {
+			characters[0].outfits = outfits
+		}
+		if (typeof info !== "undefined") {
+			characters[0].info = info
+		}
+		if (typeof colors !== "undefined") {
+			characters[0].colors = colors
+		}
+	}
+	
 	for (let c = 0; c < characters.length; c++) {
 		characters[c].angleIndex = 0;
 		characters[c].angleToggleIndex = 0;
